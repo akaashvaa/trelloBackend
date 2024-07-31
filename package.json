@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "nodemon --env-file=.env --experimental-json-modules src/app.js"
+    "dev": "nodemon --env-file=.env --experimental-json-modules src/app.js",
+    "start": "node --env-file=.env --experimental-json-modules src/app.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
