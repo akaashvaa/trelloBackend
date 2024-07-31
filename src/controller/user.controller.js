@@ -29,9 +29,8 @@ const signup = asyncHandler(async (req, res) => {
   })
   res.cookie('token', jwtToken, {
     httpOnly: true,
-    secure: true,
-    sameSite: 'none',
-    domain: '.onrender.com',
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
     maxAge: 7 * 24 * 60 * 60 * 1000,
   })
   response = {
@@ -76,9 +75,8 @@ const signin = asyncHandler(async (req, res) => {
   })
   res.cookie('token', jwtToken, {
     httpOnly: true,
-    secure: true,
-    sameSite: 'none',
-    domain: '.onrender.com',
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
     maxAge: 7 * 24 * 60 * 60 * 1000,
   })
 
@@ -94,9 +92,8 @@ const singout = asyncHandler(async (req, res) => {
 
   res.clearCookie('token', {
     httpOnly: true,
-    secure: true,
-    sameSite: 'none',
-    domain: '.onrender.com',
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
   })
 
   return responseHandler(res, 200, {
