@@ -31,7 +31,7 @@ const signup = asyncHandler(async (req, res) => {
     httpOnly: true,
     secure: true,
     sameSite: 'none',
-    domain: '.vercel.app',
+    domain: '.onrender.com',
     maxAge: 7 * 24 * 60 * 60 * 1000,
   })
   response = {
@@ -78,7 +78,7 @@ const signin = asyncHandler(async (req, res) => {
     httpOnly: true,
     secure: true,
     sameSite: 'none',
-    domain: '.vercel.app',
+    domain: '.onrender.com',
     maxAge: 7 * 24 * 60 * 60 * 1000,
   })
 
@@ -96,7 +96,7 @@ const singout = asyncHandler(async (req, res) => {
     httpOnly: true,
     secure: true,
     sameSite: 'none',
-    domain: '.vercel.app',
+    domain: '.onrender.com',
   })
 
   return responseHandler(res, 200, {
