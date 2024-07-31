@@ -4,7 +4,8 @@ import express from 'express'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
-
+import dotenv from 'dotenv'
+dotenv.config()
 import indexRouter from './routes/index.js'
 import { userRouter } from './routes/user/user.routes.js'
 import { taskRouter } from './routes/task/task.routes.js'
