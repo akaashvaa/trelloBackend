@@ -29,8 +29,8 @@ const signup = asyncHandler(async (req, res) => {
   })
   res.cookie('token', jwtToken, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'lax',
+    secure: true,
+    sameSite: 'none',
     maxAge: 7 * 24 * 60 * 60 * 1000,
   })
   response = {
@@ -75,8 +75,8 @@ const signin = asyncHandler(async (req, res) => {
   })
   res.cookie('token', jwtToken, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'lax',
+    secure: true,
+    sameSite: 'none',
     maxAge: 7 * 24 * 60 * 60 * 1000,
   })
 
@@ -92,8 +92,8 @@ const singout = asyncHandler(async (req, res) => {
 
   res.clearCookie('token', {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'lax',
+    secure: true,
+    sameSite: 'none',
   })
 
   return responseHandler(res, 200, {
