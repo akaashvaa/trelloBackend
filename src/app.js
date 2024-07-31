@@ -13,6 +13,9 @@ import { errorResponseHandler } from './utils/errorResponseHandler.js'
 dotenv.config()
 var app = express()
 
+const PORT = process.env.PORT || 8000
+const MONGODB_URI = process.env.MONGODB_URI
+
 app.use(
   cors({
     origin: 'https://trello-client-r7bt.vercel.app',
@@ -27,20 +30,16 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static('public'))
 
-app.use('/api/v1', indexRouter)
+app.use('/', indexRouter)
 app.use('/api/v1/users', userRouter)
 app.use('/api/v1/task', taskRouter)
+app.use(errorResponseHandler)
 
-// catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404))
 })
 
 // error handler
-app.use(errorResponseHandler)
-
-const PORT = process.env.PORT || 8000
-const MONGODB_URI = process.env.MONGODB_URI
 
 mongoose
   .connect(MONGODB_URI)
