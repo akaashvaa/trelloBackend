@@ -14,7 +14,7 @@ var app = express()
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: 'https://trello-client-r7bt.vercel.app',
     credentials: true,
   })
 )
