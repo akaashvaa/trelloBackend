@@ -15,7 +15,6 @@ var app = express()
 
 const PORT = process.env.PORT || 8000
 const MONGODB_URI = process.env.MONGODB_URI
-
 app.use(
   cors({
     origin: 'https://trello-client-r7bt.vercel.app',
@@ -23,6 +22,7 @@ app.use(
   })
 )
 app.use(cookieParser())
+app.set('trust proxy', 1)
 
 app.use(logger('dev'))
 
