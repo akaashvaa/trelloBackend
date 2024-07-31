@@ -2,10 +2,11 @@
   "name": "server",
   "version": "0.0.0",
   "private": true,
+  "main": "/src/app.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon --env-file=.env --experimental-json-modules src/app.js",
-    "start": "node --experimental-json-modules src/app.js"
+    "start": "node src/app.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
