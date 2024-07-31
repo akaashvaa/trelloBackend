@@ -7,13 +7,5 @@ router.get('/', function (req, res, next) {
     message: 'everything works fine',
   })
 })
-router.get('/check-token', (req, res) => {
-  const token = req.cookies.get('token')
-  if (token) {
-    return res.redirect(302, '/')
-  } else {
-    return res.redirect(302, '/signin')
-  }
-})
 
 export default router
