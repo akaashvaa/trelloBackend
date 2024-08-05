@@ -8,7 +8,7 @@ import { zTaskSchema } from '../utils/zodSchema.js'
 const getAllTask = asyncHandler(async (req, res) => {
   const tasks = await Task.find({ user: req.userId }).select('-user')
 
-  // console.log({ tasks, userId })
+  console.log('user id', req.userId)
   if (!tasks) throw new ErrorHandler(411, 'get all todo', 'user not found')
   const response = {
     type: 'get all todo',

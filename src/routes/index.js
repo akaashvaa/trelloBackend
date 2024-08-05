@@ -1,11 +1,10 @@
-import express from 'express'
-var router = express.Router()
+import express from "express";
+var router = express.Router();
 
-router.get('/', function (req, res, next) {
+router.get("/", function (req, res, next) {
   return res.status(200).json({
-    type: 'ok',
-    message: 'everything works fine',
-  })
-})
-
-export default router
+    type: "ok",
+    message: "everything works fine",
+  });
+});
+export default router;
