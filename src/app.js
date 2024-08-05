@@ -18,7 +18,7 @@ const MONGODB_URI = process.env.MONGODB_URI
 
 app.use(
   cors({
-    origin: process.app.CLIENT_URL,
+    origin: process.env.CLIENT_URL,
     credentials: true,
   })
 )
