@@ -2,6 +2,7 @@
 1. Clone the project :
   ```bash
   git clone git@github.com:akaashvaa/trelloBackend.git
+  cd trelloBackend
   ```
 2. Install dependencies :
   ```bash
