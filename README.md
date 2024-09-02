@@ -1,5 +1,13 @@
 # Development setup
-
+1. Clone the project :
+  ```bash
+  git clone git@github.com:akaashvaa/trelloBackend.git
+  ```
+2. Install dependencies :
+  ```bash
+  yarn install
+  ```
+3. Start the server :
 ```bash
   yarn run dev
 ```
