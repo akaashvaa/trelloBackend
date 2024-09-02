@@ -73,6 +73,7 @@ const signin = asyncHandler(async (req, res) => {
   const jwtToken = jwt.sign({ userId: user._id }, SECRET_TOKEN, {
     expiresIn: "7d",
   });
+  /**
   res.setHeader(
     "Set-Cookie",
     cookie.serialize("token", jwtToken, {
@@ -82,6 +83,7 @@ const signin = asyncHandler(async (req, res) => {
       maxAge: 7 * 24 * 60 * 60 * 1000,
     }),
   );
+  */
   res.cookie("token", jwtToken, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
@@ -89,8 +91,10 @@ const signin = asyncHandler(async (req, res) => {
     maxAge: 7 * 24 * 60 * 60 * 1000,
   });
 
+
   response = {
     type: "signin",
+    jwt : jwtToken,
     message: " user signin successfully",
   };
   return responseHandler(res, 200, response);
